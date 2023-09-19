@@ -1,6 +1,7 @@
 // standard Rust library
-use std::io;
 use rand::Rng;
+use std::cmp::Ordering;
+use std::io;
 
 // fn declare a new function
 fn main() {
@@ -24,6 +25,18 @@ fn main() {
         // expect if for handling the error, would get a warning if missing
         .expect("Failed to read line");
 
+    // convert String type to unsigned-32 bytes integer, the parse() func -> convert String to another type
+    // the : after guess, let Rust know we need to annotate
+    // Rust can allow use to 'Shadowing' the previous value with a new one, rather than create two unique variables
+    let guess: u32 = guess.trim().parse().expect("Please type a number");
+
     // in Rust, {} is the placeholder
-    println!("You guessed: {guess}")
+    println!("You guessed: {guess}");
+
+    // Ordering is an Enum with 3 values -> match is little bit similar to case in switch
+    match guess.cmp(&secret_number) {
+        Ordering::Less => println!("Too small"),
+        Ordering::Greater => println!("Too big"),
+        Ordering::Equal => println!("Correct"),
+    }
 }
