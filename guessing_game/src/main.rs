@@ -1,9 +1,14 @@
 // standard Rust library
 use std::io;
+use rand::Rng;
 
 // fn declare a new function
 fn main() {
     println!("Guess the number!");
+
+    // start..=end is the pattern with lower & upper bound
+    let secret_number = rand::thread_rng().gen_range(1..=100);
+    println!("The secret number is: {secret_number}");
     println!("Please input your guess.");
 
     // in Rust, variables are immutable by default -> let abc = 10, abc could not be changed
