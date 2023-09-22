@@ -6,4 +6,9 @@ fn main() {
     x = 6;
     println!("The value of x is: {x}");
     println!("The const: {THREE_HOURS_IN_SECONDS}");
+
+    // shadowing
+    let y = 5;
+    let y = 100;
+    println!("The value of y now is: {y}");
 }
