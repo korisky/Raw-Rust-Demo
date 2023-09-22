@@ -29,4 +29,8 @@ fn main() {
     let tup: (i32, f64, u8) = (500, 5.3, 0);
     let (a, b, c) = tup;
     println!("Tuple inner value a: {a}, b:{b}, c:{c}");
+    let first = tup.0;
+    let second = tup.1;
+    let third = tup.2;
+    println!("Tuple value explicitly first: {first}, second:{second}, third:{third}");
 }
