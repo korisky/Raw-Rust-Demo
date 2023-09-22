@@ -1,6 +1,13 @@
 fn main() {
     another_function(5);
     print_labeled_measurement(5, 'h');
+
+    let x = five();
+    println!("function result: {x}");
+}
+
+fn five() -> i32 {
+    5
 }
 
 fn print_labeled_measurement(value: i32, unit_label: char) {
