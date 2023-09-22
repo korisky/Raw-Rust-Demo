@@ -33,4 +33,11 @@ fn main() {
     let second = tup.1;
     let third = tup.2;
     println!("Tuple value explicitly first: {first}, second:{second}, third:{third}");
+
+    // array
+    let months = ["January", "February", "March", "April"];
+    let arr: [u8; 5]; // [type;size] could also be used to declare an array
+    arr = [1, 2, 3, 4, 5];
+    let single_month = months[0];
+    println!("Months first:{single_month}");
 }
