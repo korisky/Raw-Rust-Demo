@@ -9,6 +9,10 @@ fn main() {
 
     // shadowing
     let y = 5;
-    let y = 100;
-    println!("The value of y now is: {y}");
+    let y = y + 1;
+    {
+        let y = y * 2;
+        println!("The value of y in the inner scope is: {y}");
+    }
+    println!("The value of y in the outer scope is: {y}");
 }
