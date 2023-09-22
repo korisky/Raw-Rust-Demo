@@ -22,6 +22,11 @@ fn main() {
     println!("The value of y now become: {y}");
 
     // different declare
-    let z = 100; // auto select data type
-    let z: u32 = 100; // declare data type explicitly
+    let _z = 100; // auto select data type
+    let _z: u32 = 100; // declare data type explicitly
+
+    // tuple
+    let tup: (i32, f64, u8) = (500, 5.3, 0);
+    let (a, b, c) = tup;
+    println!("Tuple inner value a: {a}, b:{b}, c:{c}");
 }
