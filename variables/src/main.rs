@@ -20,4 +20,8 @@ fn main() {
     // also, by using let -> we can even change the original type of a value
     let y = 4.5;
     println!("The value of y now become: {y}");
+
+    // different declare
+    let z = 100; // auto select data type
+    let z: u32 = 100; // declare data type explicitly
 }
