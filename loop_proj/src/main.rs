@@ -47,4 +47,15 @@ fn multi_loop_fn() {
     for ele in arr {
         print!("{ele} ");
     }
+    println!();
+
+    // below range (0..8), would running 0 - 7, not 8
+    for number in (0..8).rev() {
+        print!("{number} ");
+    }
+    println!();
+    // 1 - 4
+    for number in 1..5 {
+        print!("{number} ");
+    }
 }
