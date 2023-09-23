@@ -4,8 +4,17 @@ fn main() {
 
     let x = five();
     println!("function result: {x}");
+
+    // in Rust -> Calling a function is an expression
+    // the {} also means an expression, thus, y could get value
+    let y = {
+        let x_1 = 3;
+        x_1 + 1
+    };
+    println!("The value of y is {y}")
 }
 
+// five() function with return value -> i32
 fn five() -> i32 {
     5
 }
