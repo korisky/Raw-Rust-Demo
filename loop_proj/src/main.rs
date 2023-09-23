@@ -35,11 +35,16 @@ fn multi_loop_fn() {
         count += 1;
     }
 
-    // Rust also support While for looping, we can simply use While to traverse array
+    // Rust also support While for looping
     println!("\n count now = {count}");
     while count < 3 {
         count += 1;
     }
+    println!("\nEnd count = {count}\n");
 
-    println!("\nEnd count = {count}")
+    // for the best use on traversing on an array, Rust provide in similar to range in Golang
+    let arr = [10, 20, 30, 40, 50];
+    for ele in arr {
+        print!("{ele} ");
+    }
 }
