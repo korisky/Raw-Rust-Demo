@@ -16,6 +16,7 @@ fn main() {
 
 // five() function with return value -> i32
 fn five() -> i32 {
+    // as you can see, as it return, it do not need ; at the end of the line
     5
 }
 
