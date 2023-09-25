@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "reference"
+name = "mut_reference"
 version = "0.1.0"

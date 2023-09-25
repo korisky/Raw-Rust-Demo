@@ -1,5 +1,5 @@
 [package]
-name = "reference"
+name = "im_reference"
 version = "0.1.0"
 edition = "2021"
 

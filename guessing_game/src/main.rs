@@ -22,7 +22,7 @@ fn main() {
 
         // we could use std::io::stdin if we not import std::io
         io::stdin()
-            // & indicate it's a reference
+            // & indicate it's a im_reference
             // also, need to use '&mut guess' rather than '&guess' to make it mutable
             .read_line(&mut guess)
             // expect if for handling the error, would get a warning if missing
