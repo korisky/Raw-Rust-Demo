@@ -5,7 +5,12 @@ fn main() {
 
     let s2 = "hello world";
     let word2 = first_word(&s2);
-    println!("{}", word2)
+    println!("{}", word2);
+
+    // other slice
+    let a = [1, 2, 3, 4, 5];
+    let slice = &a[1..3];
+    assert_eq!(slice, &[2, 3]);
 }
 
 // update to return a slice (reference)
