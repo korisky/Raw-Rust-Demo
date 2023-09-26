@@ -1,18 +1,21 @@
 fn main() {
-    let mut s = String::from("enumerate stuff");
-
-    let word = first_word(&s);
-
-    s.clear(); // clear the String, free the space
+    let s = String::from("enumerate stuff");
+    let word = first_word(&s[..]);
     println!("{}", word); // could still use the length
+
+    let s2 = "hello world";
+    let word2 = first_word(&s2);
+    println!("{}", word2)
 }
 
-fn first_word(s: &String) -> usize {
+// update to return a slice (reference)
+// as we change the input from &String to &str, it allows use pass both String or simple immutable String
+fn first_word(s: &str) -> &str {
 
     // for traversing through the String, we convert String into a bytes array
-    let bytes = s.as_bytes();
+    let bytes = s.as_bytes();  // if s is not mutable, we could split it as bytes
 
-    // by using {:?}, we can print it out
+    // // by using {:?}, we can print it out
     println!("{:?}", bytes.iter()); // Iter([72, 101, 108, 108, 111])
     println!("{:?}", bytes.iter().enumerate()); // Enumerate { iter: Iter([72, 101, 108, 108, 111]), count: 0 }
 
@@ -22,9 +25,8 @@ fn first_word(s: &String) -> usize {
         // first element i, is the index
         // second element is the reference of the element
         if item == b' ' { // here b' ', means byte of ' ', would get the value 0
-            return i;
+            return &s[0..i];
         }
     }
-
-    s.len()
+    &s[..]
 }
