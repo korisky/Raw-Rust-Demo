@@ -7,9 +7,16 @@ struct User {
 }
 
 fn main() {
-    let mut usr = build_user(String::from("first@open.mail"), String::from("Name"));
+    let mut usr = build_user(String::from("first@open.mail"), String::from("Tom"));
     usr.email = String::from("second@open.mail");
     println!("{:?}", usr); // by setting structs entity mutable, the change take effect
+
+    // build another entity with most param in existed one
+    let user2 = User {
+        username: String::from("Jerry"),
+        ..usr
+    };
+    println!("{:?}", user2);
 }
 
 fn build_user(email: String, username: String) -> User {
