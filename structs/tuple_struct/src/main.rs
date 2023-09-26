@@ -1,6 +1,8 @@
+// explicitly add debug functionality for the struct
 #[derive(Debug)]
 struct Color(i32, i32, i32);
 
+#[derive(Debug)]
 struct Rectangle {
     width: u32,
     height: u32,
@@ -26,6 +28,14 @@ fn main() {
         "The area of the rectangle is {} square pixels.",
         area_struct(&rect1)
     );
+    // here by using :? and #[derive(Debug)], we can print struct
+    // with :#?, a multi-line pretty output will be formed
+    println!("{:#?}", rect1);
+
+    // dbg would print standard error console string
+    // if we pass &rect1, dbg would not take the ownership of rect
+    dbg!(&rect1);
+    println!("{}", rect1.width);
 }
 
 // using tuple as input
