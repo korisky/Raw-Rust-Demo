@@ -17,6 +17,7 @@ fn main() {
         ..usr
     };
     println!("{:?}", user2);
+    // println!("{:?}", usr); // this would cause borrowed error, usr is like pass the ownership to user2
 }
 
 fn build_user(email: String, username: String) -> User {
