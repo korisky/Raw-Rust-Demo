@@ -16,6 +16,17 @@ impl Rectangle {
         self.width > other.width && self.height > other.height
     }
 
+    // associated function
+    fn square(size: u32) -> Self {
+        Self {
+            width: size,
+            height: size,
+        }
+    }
+}
+
+// multiple impl for same struct is valid
+impl Rectangle {
     fn pass_ownership(self) -> u32 {
         self.width
     }
@@ -37,4 +48,10 @@ fn main() {
     if rect2.can_hold(&rect1) {
         println!("rect2 can hold rect1");
     }
+
+    // for associated method, we can simply call it with ::
+    // it will return constructed entity of it's struct type
+    println!();
+    let square = Rectangle::square(20);
+    println!("{:?}", square);
 }
