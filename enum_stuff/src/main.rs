@@ -4,12 +4,18 @@ enum IpAddKind {
     V6,
 }
 
-fn main() {
-    let four = IpAddKind::V4;
-    let six = IpAddKind::V6;
+struct IpAddr {
+    kind: IpAddKind,
+    address: String,
+}
 
-    route(four);
-    route(six)
+fn main() {
+    let loopback = IpAddr {
+        kind: IpAddKind::V4,
+        address: String::from("::1"),
+    };
+
+    route(loopback.kind);
 }
 
 fn route(ip_kind: IpAddKind) {
