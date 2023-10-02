@@ -5,16 +5,19 @@
 // }
 
 // rather than define pure enum without any val,
-// the kind of combined enum below is much more useful
+// the kind of combined enum below is much more useful,
+// but it's still different with a 'struct'
 #[derive(Debug)]
 enum IpAddr {
-    V4(String),
+    V4(u8, u8, u8, u8),
     V6(String),
 }
 
 
 fn main() {
-    let home = IpAddr::V4(String::from("127.0.0.1"));
-    println!("{:?}", home);
+    let home_v4 = IpAddr::V4(127, 0, 0, 1);
+    let home_v6 = IpAddr::V6(String::from("127.0.0.1"));
+    println!("{:?}", home_v4);
+    println!("{:?}", home_v6);
 }
 
