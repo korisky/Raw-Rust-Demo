@@ -1,23 +1,20 @@
+// #[derive(Debug)]
+// enum IpAddKind {
+//     V4,
+//     V6,
+// }
+
+// rather than define pure enum without any val,
+// the kind of combined enum below is much more useful
 #[derive(Debug)]
-enum IpAddKind {
-    V4,
-    V6,
+enum IpAddr {
+    V4(String),
+    V6(String),
 }
 
-struct IpAddr {
-    kind: IpAddKind,
-    address: String,
-}
 
 fn main() {
-    let loopback = IpAddr {
-        kind: IpAddKind::V4,
-        address: String::from("::1"),
-    };
-
-    route(loopback.kind);
+    let home = IpAddr::V4(String::from("127.0.0.1"));
+    println!("{:?}", home);
 }
 
-fn route(ip_kind: IpAddKind) {
-    println!("{:?}", ip_kind);
-}
