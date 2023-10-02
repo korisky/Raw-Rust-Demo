@@ -7,6 +7,19 @@
 // rather than define pure enum without any val,
 // the kind of combined enum below is much more useful,
 // but it's still different with a 'struct'
+// can be seem as:
+// struct Ipv4Addr {
+//     // --snip--
+// }
+//
+// struct Ipv6Addr {
+//     // --snip--
+// }
+//
+// enum IpAddr {
+//     V4(Ipv4Addr),
+//     V6(Ipv6Addr),
+// }
 #[derive(Debug)]
 enum IpAddr {
     V4(u8, u8, u8, u8),
