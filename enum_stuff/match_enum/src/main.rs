@@ -45,4 +45,14 @@ fn main() {
         7 => {}
         _ => () // _ means others, the number we not care
     }
+
+    // if we only care one matched situation, we can use if let
+    let mut count = 0;
+    if let Coin::Quarter(state) = Coin::Dime {
+        println!("State from {:?}", state);
+    } else {
+        // all other situations would go into here
+        count += 1;
+    }
+    println!("{}", count);
 }
