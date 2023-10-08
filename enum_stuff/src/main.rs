@@ -32,5 +32,14 @@ fn main() {
     let home_v6 = IpAddr::V6(String::from("127.0.0.1"));
     println!("{:?}", home_v4);
     println!("{:?}", home_v6);
+
+    // optional related
+    let some_number = Some(5);
+    println!("{:?}", some_number);
+
+    // we have to convert Optional<T> to T, then can do ops over it
+    // usually, we need call 'unwrap()' fn
+    let number_sum = some_number.unwrap() + 20;
+    println!("{}", number_sum);
 }
 
