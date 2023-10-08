@@ -23,7 +23,18 @@ fn value_in_cents(coin: Coin) -> u8 {
     }
 }
 
+// plus_one is for handling the Option enum + logic
+fn plus_one(x: Option<i32>) -> Option<i32> {
+    match x {
+        None => None, // handle the None situation
+        Some(i) => Some(i + 1), // handle with normal logic
+    }
+}
+
 
 fn main() {
     println!("{}", value_in_cents(Coin::Quarter(UsState::Alabama)));
+
+    let five = Some(5);
+    println!("{}", plus_one(five).unwrap());
 }
