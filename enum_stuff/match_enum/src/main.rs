@@ -25,16 +25,24 @@ fn value_in_cents(coin: Coin) -> u8 {
 
 // plus_one is for handling the Option enum + logic
 fn plus_one(x: Option<i32>) -> Option<i32> {
+    // Rust compiler would force us handle ALL CASES
     match x {
         None => None, // handle the None situation
         Some(i) => Some(i + 1), // handle with normal logic
     }
 }
 
-
 fn main() {
     println!("{}", value_in_cents(Coin::Quarter(UsState::Alabama)));
 
     let five = Some(5);
     println!("{}", plus_one(five).unwrap());
+
+    // even integer stuff can be used with match
+    let dice_roll = 9;
+    match dice_roll {
+        3 => {}
+        7 => {}
+        _ => () // _ means others, the number we not care
+    }
 }
