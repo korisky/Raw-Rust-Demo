@@ -1,0 +1,24 @@
+# Rust build artifacts
+/target/
+**/*.rs.bk         # editor backups
+
+# Dependency lockfile (optional for libraries)
+/Cargo.lock
+
+# JetBrains IDE files
+/.idea/
+/*.iml
+
+# VS Code, if you happen to open it
+/.vscode/
+
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.*.local
+
+# Logs
+*.log
