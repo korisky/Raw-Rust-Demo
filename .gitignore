@@ -1,5 +1,5 @@
 # Rust build artifacts
-/target/
+**/target/
 **/*.rs.bk         # editor backups
 
 # Dependency lockfile (optional for libraries)
